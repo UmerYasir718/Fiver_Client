@@ -1,38 +1,502 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  max-width: 150px;
+  max-height: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media screen and (min-width:0px) and (max-width:420px) {
+  .logo {
+    max-width: 120px;
+    max-height: 50px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.dropstart .dropdown-menu[data-bs-popper] {
+  top: 0;
+  right: 100%;
+  left: auto;
+  margin-top: 0;
+  margin-right: var(--bs-dropdown-spacer);
+  padding: 5px;
+  line-height: 10px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+
+  /* align-items: center; */
+}
+
+.dropdown-item {
+  font-weight: bold;
+}
+
+/* -------------------------------------------------------------Login/Register Page--------------------------------------------------------------------- */
+section {
+  width: 100%;
+  padding: 10px;
+  min-height: calc(100vh - 80px);
+}
+
+section .form_data {
+  max-width: 550px;
+  margin: 25px auto;
+  padding: 35px 10px;
+  box-shadow: 0 0 15px -10px #2d3748;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (min-width:0px) and (max-width:420px) {
+  section .form_data {
+
+    padding: 35px 5px;
+  }
+}
+
+.form_heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_data h1 {
+  font-size: 34px;
+  color: #2a4365;
+}
+
+.form_data p {
+  color: #718096;
+  font-size: 15px;
+  margin-top: 9px;
+}
+
+.form_data .form {
+  margin-top: 45px;
+  width: 100%;
+  padding: 10px 50px;
+}
+
+.form_data .form .form_input input {
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #d4d0d0;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 14px;
+  margin-top: 9px;
+  font-size: 14px;
+
+}
+
+.form_data .form .form_input label {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form_input .two {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.form_data .form .form_input input:focus {
+  border: 2px solid rgba(66, 153, 225, 0.6);
+}
+
+
+.form_data .form .form_input input::placeholder {
+  color: #8694a8;
+  letter-spacing: .5px;
+  font-size: 14px;
+}
+
+.form_input .showpass {
+  position: absolute;
+  right: 0;
+  top: 1px;
+  padding: 7px 10px;
+  margin-right: 5px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2a4365;
+  background-color: #EDF2F7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form .btn {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #ff5a5f;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+
+.form .btn:hover {
+  background-color: #97a1b1;
+}
+
+.form_data .form p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form_data .form a {
+  text-decoration: none;
+  color: #718096;
+  border-bottom: 2px solid #8694a8;
+}
+
+/* ------------------------------------------------------------------------Cards------------------------------------------------------------------------------ */
+.TDCardSetting {
+  display: flex;
+  justify-content: center !important;
+  align-content: center;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-detail-2 {
+  margin-left: auto;
+}
+
+
+.HostelName {
+  color: #7F8387;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.TDStartingFrom {
+  color: #0D6EFD;
+  font-weight: bolder;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.HostelPrice {
+  color: #0D6EFD;
+  font-weight: bolder;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hostelHeading {
+  display: flex;
+  justify-content: center !important;
+  align-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 5px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-size: x-large;
+  margin: auto;
+  width: 50vw;
+  background-color: #fafafa;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+/* ------------------------------------------------------------------------SearchBar------------------------------------------------------------------------------ */
+.searchBar {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  /* align-content: center; */
+
+}
+
+.searchBarColor {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.searchButton {
+  display: block;
+  justify-content: center;
+  background-color: #ff5a5f;
+  /* border-radius: 200px; */
+  padding: 5px 12px;
   color: white;
+  align-items: center;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+/* .nav-item:hover {
+  background-color: #d3d4d5;
+  border-radius: 100px;
+} */
+.searchBarParts {
+  border-right: 1px solid #d3d4d5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.searchBarParts:hover {
+  background-color: #d3d4d5;
+  border-radius: 100px;
+}
+
+/* ---------------------------------------------------------------Booking Modal-------------------------------------------- */
+.modalInformation {
+  border: 2px solid rgb(156, 153, 153);
+  border-radius: 5px;
+  padding: 3px;
+}
+
+/* ---------------------------------------------------------------Map Setting-------------------------------------------- */
+.mapouter {
+  position: relative;
+  text-align: right;
+  width: 100%;
+  height: 300px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  width: 100%;
+  height: 300px;
+}
+
+.gmap_iframe {
+  height: 300px !important;
+}
+
+.facilities {
+  display: flex;
+  border-bottom: 1px solid black;
+  gap: 2px;
+}
+
+
+/* ---------------------------------------------------------------LowerFooter-------------------------------------------- */
+.socialIcons a {
+  display: inline-flex;
+  border: 3px solid gray;
+  border-radius: 50px;
+  color: gray;
+  background: none;
+  width: 55px;
+  height: 55px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.socialIcons a:hover {
+  display: inline-flex;
+  border: 3px solid red;
+  border-radius: 50px;
+  color: red;
+  background: none;
+  width: 55px;
+  height: 55px;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin: 5px;
+}
+
+.headerSection2 h4 {
+  color: #FF0000;
+}
+
+.headerSection2 ul {
+  list-style-type: none;
+  padding-inline: 0;
+  font-size: 20px;
+}
+
+.headerSection2 a {
+  font-size: 20px;
+  text-decoration: none;
+  color: gray;
+}
+
+.headerSection2 a:hover {
+  color: #FF0000;
+}
+
+.secondFooter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 3px;
+  font-size: 20px;
+}
+
+/* -----------------------------------------UpperFooter------------------------------------------------------ */
+.UpperFooter {
+  background: url("https://res.cloudinary.com/dckaznwk5/image/upload/v1705475284/UpperFooter_uarqtb.jpg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+}
+
+.subscribe {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  margin-top: 40px;
+}
+
+.subscribe input {
+  background: transparent;
+  border: 0;
+  outline: none;
+  flex: 1;
+}
+
+.subscribe button {
+  width: 100%;
+  max-width: 100px;
+  padding: 6px 15px;
+  border-radius: 60px;
+  background: #FF0000;
+  color: white;
+  border: none;
+}
+
+.subscribe button:active {
+  width: 100%;
+  max-width: 100px;
+  padding: 6px 15px;
+  border-radius: 60px;
+  background: #2e7d00;
+  color: white;
+  border: none;
+}
+
+.SubscribeText h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 998px) {
+  .subscribe {
+    width: 100%;
+    max-width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* -------------------------------------------------------------PopUp------------------------------------------------------------- */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-inner {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-image {
+  width: 100%;
+  height: 100%;
+  border: none;
+  flex-grow: 1;
+}
+
+.close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  color: #282c34;
+}
+
+.CardTitle {
+  position: relative;
+  text-transform: uppercase;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 2px;
+  /* left: 150px;
+  bottom: 50px; */
+  /* color: white;
+  font-size: 20px;
+  font-weight: bold; */
+}
+
+.videoReference {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 450px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+.video {
+  width: 500px;
+  max-width: 1000px;
+  margin-right: auto;
+}
+
+@media screen and (min-width:0px) and (max-width:420px) {
+  .video {
+    width: 350px;
   }
+}
+
+.Picture {
+  width: 700px;
+  max-height: 500px;
 }
