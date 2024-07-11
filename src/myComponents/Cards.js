@@ -53,7 +53,7 @@ export default function Cards() {
                         data
                             .filter(data => data.hostelType === "1")
                             .map((data, index) => (
-                                <div className="col-3 col-12 col-md-6 col-sm-12 col-lg-3 col-xl-2 mb-3 TDCardSetting" key={data._id}>
+                                <div className="col-4 col-12 col-md-6 col-sm-12 col-lg-3 col-xl-3 mb-3 TDCardSetting" key={data._id}>
                                     <div className="float-start" style={{ width: "25rem" }}>
                                         <Link className='text-decoration-none' onClick={() => handleHostelRecord(data._id)}>
                                             <figure className="position-relative">
@@ -91,7 +91,7 @@ export default function Cards() {
                         data
                             .filter(data => data.hostelType === "2")
                             .map((data, index) => (
-                                <div className="col-3 col-12 col-md-6 col-sm-12 col-lg-3 col-xl-2 mb-3 TDCardSetting" key={data._id}>
+                                <div className="col-4 col-12 col-md-6 col-sm-12 col-lg-3 col-xl-3 mb-3 TDCardSetting" key={data._id}>
                                     <div className="float-start" style={{ width: "25rem" }}>
                                         <Link className='text-decoration-none' onClick={() => handleHostelRecord(data._id)}>
                                             <figure className="position-relative">

@@ -11,7 +11,7 @@ export default function Login() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { setUser } = useContext(Store);
-  const [setCookies] = useCookies(["token"]);
+  const [cookies, setCookies] = useCookies(["token"]);
   const [loading, setLoading] = useState(false);
   const handleEmailChange = (e) => {
     setUserEmail(e.target.value);
