@@ -4,7 +4,7 @@
 }
 
 .logo {
-  max-width: 150px;
+  width: 100px;
   max-height: 50px;
 }
 
@@ -139,7 +139,7 @@ section .form_data {
   border: none;
   outline: none;
   border-radius: 5px;
-  background-color: #ff5a5f;
+  background-color: #009578;
   color: #fff;
   font-weight: 600;
   font-size: 18px;
