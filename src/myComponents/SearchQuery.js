@@ -5,7 +5,6 @@ import LowerFooter from "./LowerFooter";
 import Navbar from "./Navbar";
 import SearchBar from "./SearchBar";
 import UpperFooter from "./UpperFooter";
-import VideoReference from "./VideoReference";
 export default function SearchQuery() {
   const [setHostelRecord] = useState("");
   const { queryData } = useContext(Store);
@@ -134,7 +133,6 @@ export default function SearchQuery() {
           )}
         </div>
       </div>
-      <VideoReference />
       <UpperFooter />
       <LowerFooter />
     </div>

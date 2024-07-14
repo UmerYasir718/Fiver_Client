@@ -18,7 +18,7 @@ export default function ResetPassword() {
     if (userPassword === userConfirmPassword) {
       try {
         const response = await fetch(
-          `https://ait-bnb-apis.vercel.app/${id}/${token}`,
+          `http://localhost:8000/UserResetPassword/${id}/${token}`,
           {
             method: "POST",
             headers: {

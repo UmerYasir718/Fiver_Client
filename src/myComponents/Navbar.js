@@ -1,34 +1,34 @@
-import Avatar from '@mui/material/Avatar';
+import Avatar from "@mui/material/Avatar";
 import React, { useContext, useEffect } from "react";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
 import Store from "../mainComponents/Store";
 export default function Navbar() {
-  const [removeCookie] = useCookies(['token']);
+  const [cookie, setCookie, removeCookie] = useCookies(["userToken"]);
   const navigate = useNavigate();
   const { user, setUser } = useContext(Store);
   const handleSignOut = () => {
-    // Remove the 'token' cookie upon signout
-    removeCookie("token");
+    // Remove the 'userToken' cookie upon signout
+    removeCookie("userToken");
     setTimeout(() => {
-      navigate('/login');
-      setUser()
-      console.log('Navigating to login');
+      navigate("/login");
+      setUser();
+      console.log("Navigating to login");
     }, 1000);
-
   };
   const check = () => {
     console.log(user);
-  }
-  useEffect(() => {
-    check()
-  }
+  };
+  useEffect(
+    () => {
+      check();
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    , [])
+    []
+  );
   return (
     <>
-
       <div className='container-fluid mt-3 '>
         <nav className='navbar navbar-expand-lg'>
           <div className='container-fluid'>
@@ -44,17 +44,22 @@ export default function Navbar() {
               aria-expanded='false'
               aria-label='Toggle navigation'
             >
-              <span className=''>  <i className='bi bi-list me-2 fs-4'></i>
-
+              <span className=''>
+                {" "}
+                <i className='bi bi-list me-2 fs-4'></i>
               </span>
               {user && user.userEmail && user.userName ? (
-                <Avatar style={{ background: "#ff5a5f" }}>{user.userName[0].toUpperCase()}</Avatar>
+                <Avatar style={{ background: "#ff5a5f" }}>
+                  {user.userName[0].toUpperCase()}
+                </Avatar>
               ) : (
-                <Avatar>{ }</Avatar>
+                <Avatar>{}</Avatar>
               )}
-
             </button>
-            <div className='collapse navbar-collapse' id='navbarSupportedContent'>
+            <div
+              className='collapse navbar-collapse'
+              id='navbarSupportedContent'
+            >
               {/* ------------------------------------------------------------------For Mobile Screen --------------------------------------------------------- */}
               <ul className='navbar-nav me-auto mb-2 mb-lg-0 d-flex d-md-none fw-bold'>
                 <li className='nav-item'>
@@ -65,8 +70,8 @@ export default function Navbar() {
                   ) : (
                     <Link className='nav-link active' to='/login'>
                       Login
-                    </Link>)}
-
+                    </Link>
+                  )}
                 </li>
                 <li className='nav-item'>
                   {user && user.userEmail && user.userName ? (
@@ -78,7 +83,6 @@ export default function Navbar() {
                       Register
                     </Link>
                   )}
-
                 </li>
               </ul>
               {/* ------------------------------------------------------------------For Large Screen --------------------------------------------------------- */}
@@ -93,9 +97,11 @@ export default function Navbar() {
                   >
                     <i className='bi bi-list me-2 fs-4'></i>
                     {user && user.userEmail && user.userName ? (
-                      <Avatar style={{ background: "#ff5a5f" }}>{user.userName[0].toUpperCase()}</Avatar>
+                      <Avatar style={{ background: "#ff5a5f" }}>
+                        {user.userName[0].toUpperCase()}
+                      </Avatar>
                     ) : (
-                      <Avatar>{ }</Avatar>
+                      <Avatar>{}</Avatar>
                     )}
                   </button>
                   <ul className='dropdown-menu   '>
@@ -107,10 +113,12 @@ export default function Navbar() {
                       ) : (
                         <Link className='dropdown-item' to='/login'>
                           Login
-                        </Link>)}
-
+                        </Link>
+                      )}
                     </li>
-                    <li><hr className="dropdown-divider fw-bold" /></li>
+                    <li>
+                      <hr className='dropdown-divider fw-bold' />
+                    </li>
                     <li className='nav-item'>
                       {user && user.userEmail && user.userName ? (
                         <Link className='dropdown-item' onClick={handleSignOut}>
@@ -122,7 +130,6 @@ export default function Navbar() {
                         </Link>
                       )}
                     </li>
-
                   </ul>
                 </div>
               </div>

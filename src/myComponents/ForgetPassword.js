@@ -9,7 +9,7 @@ export default function ForgetPassword() {
   const handleForgetPassword = async () => {
     console.log(userEmail);
     try {
-      const response = await fetch("https://ait-bnb-apis.vercel.app/userForgetPassword", {
+      const response = await fetch("http://localhost:8000/userForgetPassword", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export default function ForgetPassword() {
       if (data.success) {
         // Login successful, you can handle the success scenario here
         console.log("Link Send successful:", data);
-        setMessage(data.message)
+        setMessage(data.message);
       } else {
         // Login failed, handle the error scenario
         console.error("Forget failed:", data.message);
@@ -41,7 +41,9 @@ export default function ForgetPassword() {
           </div>
 
           <div className='form'>
-            <p className="fw-bold d-flex justify-content-center align-content-center text-success fs-5">{message}</p>
+            <p className='fw-bold d-flex justify-content-center align-content-center text-success fs-5'>
+              {message}
+            </p>
             <div className='form_input'>
               <label htmlFor='email'>Email Address</label>
               <div className='two'>
@@ -56,7 +58,9 @@ export default function ForgetPassword() {
               </div>
             </div>
 
-            <button className='btn' onClick={handleForgetPassword}>Reset Password</button>
+            <button className='btn' onClick={handleForgetPassword}>
+              Reset Password
+            </button>
             <p>
               Back To Login?{" "}
               <Link className='text-primary' to='/login'>

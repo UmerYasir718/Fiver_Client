@@ -3,6 +3,7 @@ import { useCookies } from "react-cookie";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cancel from "../myComponents/Cancel";
 import Cards from "../myComponents/Cards";
 import Detail from "../myComponents/Detail";
 import ForgetPassword from "../myComponents/ForgetPassword";
@@ -10,25 +11,23 @@ import Login from "../myComponents/Login";
 import Register from "../myComponents/Register";
 import ResetPassword from "../myComponents/ResetPassword";
 import SearchQuery from "../myComponents/SearchQuery";
+import Success from "../myComponents/Success";
 import Store from "./Store";
 
 export default function MainRoutes() {
   const [user, setUser] = useState([]);
   const [queryData, setQueryData] = useState([]);
-  const [cookies] = useCookies(["token"]);
+  const [cookies] = useCookies(["userToken"]);
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        const response = await fetch(
-          "https://ait-bnb-apis.vercel.app/userVerify",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${cookies.token}`,
-            },
-          }
-        );
+        const response = await fetch("http://localhost:8000/userVerify", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${cookies.userToken}`,
+          },
+        });
 
         if (response.ok) {
           const data = await response.json();
@@ -66,10 +65,12 @@ export default function MainRoutes() {
             <Route exact path='/detail' element={<Detail />}></Route>
             <Route
               exact
-              path='/UserReset-Password/:id/:token'
+              path='/UserReset-Password/:id/:userToken'
               element={<ResetPassword />}
             ></Route>
             <Route exact path='/query' element={<SearchQuery />}></Route>
+            <Route exact path='/sucess' element={<Success />}></Route>
+            <Route exact path='/cancel' element={<Cancel />}></Route>
           </Routes>
         </Router>
       </Store.Provider>

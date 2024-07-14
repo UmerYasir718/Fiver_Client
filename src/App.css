@@ -171,6 +171,7 @@ section .form_data {
   align-content: center;
 }
 
+
 .card-detail {
   display: flex;
   flex-direction: row;
@@ -182,8 +183,8 @@ section .form_data {
 
 
 .HostelName {
-  color: #7F8387;
-  font-weight: bolder;
+  color: black;
+  font-weight: normal;
   text-transform: uppercase;
 }
 
@@ -194,7 +195,7 @@ section .form_data {
 }
 
 .HostelPrice {
-  color: #0D6EFD;
+  color: black;
   font-weight: bolder;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -477,11 +478,26 @@ section .form_data {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7;
+  background-color: #4d1727;
   border-radius: 15px;
   padding: 20px;
-  min-height: 450px;
+  max-height: 300px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+.BannerHeading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 3vw;
+  font-weight: normal;
+  color: white;
+}
+
+.subHeading {
+  color: #fc7545;
+  font-style: normal;
 }
 
 .video {
@@ -499,4 +515,57 @@ section .form_data {
 .Picture {
   width: 700px;
   max-height: 500px;
+}
+
+
+.CardMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: green;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.CardImg {
+  border-bottom: 2px solid black;
+}
+
+.CardText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: green;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.CardLines {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: black;
+  font-size: 20px;
+}
+
+.backToHome {
+  text-decoration: none;
+  color: white;
+  background-color: green;
+  border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 5px;
+}
+
+.backToHome:hover {
+  color: white;
 }

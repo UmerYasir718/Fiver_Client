@@ -11,7 +11,7 @@ export default function Login() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { setUser } = useContext(Store);
-  const [cookies, setCookies] = useCookies(["token"]);
+  const [cookies, setCookies] = useCookies(["userToken"]);
   const [loading, setLoading] = useState(false);
   const handleEmailChange = (e) => {
     setUserEmail(e.target.value);
@@ -24,26 +24,23 @@ export default function Login() {
     console.log(userEmail, userPassword);
     setLoading(true);
     try {
-      const response = await fetch(
-        "https://ait-bnb-apis.vercel.app/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ userEmail, userPassword }),
-        }
-      );
+      const response = await fetch("http://localhost:8000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userEmail, userPassword }),
+      });
 
       const data = await response.json();
 
       if (data.success) {
         // Login successful, you can handle the success scenario here
         console.log("Login successful:", data);
-        setCookies("token", data.token);
-        console.log("before n")
-        setUser(data.userData)
-        console.log("after n")
+        setCookies("userToken", data.userToken);
+        console.log("before n");
+        setUser(data.userData);
+        console.log("after n");
         navigate("/");
         toast.success(data.message);
         setUser(data.userData);
@@ -104,11 +101,10 @@ export default function Login() {
             <button className='btn' onClick={loading ? "" : handleLogin}>
               {loading ? " Loading..." : "Login"}
             </button>
-            <div className="d-flex flex-row  gap-2 my-3">
+            <div className='d-flex flex-row  gap-2 my-3'>
               <Link className='text-primary' to='/signup'>
                 Don't have an Account?
               </Link>{" "}
-
               <Link className='text-primary ms-auto' to='/forgetPassword'>
                 Forget Password?{" "}
               </Link>{" "}

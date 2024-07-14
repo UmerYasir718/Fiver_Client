@@ -31,8 +31,8 @@ export default function Register() {
     console.log(userEmail, userEmail, userPassword, userConfirmPassword);
     setLoading(true);
     e.preventDefault();
-    if (userCNIC.length !== 13) {
-      toast.error("Enter valid CNIC Number");
+    if (userName.length < 5) {
+      toast.error("Username must be at least 5 characters long");
       setLoading(false);
       return;
     }
@@ -43,14 +43,13 @@ export default function Register() {
       return;
     }
     try {
-      const response = await fetch("https://ait-bnb-apis.vercel.app/signup", {
+      const response = await fetch("http://localhost:8000/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           userName,
-          userCNIC,
           userEmail,
           userPassword,
         }),
@@ -80,7 +79,7 @@ export default function Register() {
         <section>
           <div className='form_data'>
             <div className='form_heading'>
-              <h1>Welcome to AirBnb, SignUp</h1>
+              <h1>Welcome to Fiver, SignUp</h1>
               <p>Hi, we are you glad you are back. Please SignUp.</p>
             </div>
 
@@ -105,17 +104,6 @@ export default function Register() {
                   name='email'
                   id='email'
                   placeholder='Enter Your Email Address'
-                />
-              </div>
-              <div className='form_input'>
-                <label htmlFor='cnic'>CNIC Number</label>
-                <input
-                  type='text'
-                  value={userCNIC}
-                  onChange={handleCNIC}
-                  name='cnic'
-                  id='cnic'
-                  placeholder='Enter Your CNIC Number'
                 />
               </div>
               <div className='form_input'>
@@ -148,12 +136,6 @@ export default function Register() {
                     id='confirmPassword'
                     placeholder='Enter Your Confirm Password'
                   />
-                  {/* <div
-                    className='showpass'
-                    onClick={() => setPassShow(!passShow)}
-                  >
-                    {!passShow ? "Show" : "Hide"}
-                  </div> */}
                 </div>
               </div>
 
@@ -167,7 +149,6 @@ export default function Register() {
                 </Link>{" "}
               </p>
             </div>
-            {/* <ToastContainer /> */}
           </div>
         </section>
       </div>
