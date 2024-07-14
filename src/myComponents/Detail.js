@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import Avatar from '@mui/material/Avatar';
 import { loadStripe } from "@stripe/stripe-js/pure";
 import React, { useContext, useState } from "react";
@@ -13,24 +14,13 @@ export default function Detail() {
     const navigate = useNavigate();
     const location = useLocation();
     // eslint-disable-next-line no-unused-vars
-    const [serviceName, setHostelName] = useState(" ");
-    const [bookingDate, setBookingDate] = useState("");
-    const [serviceStay, setHostelStay] = useState("");
-    const [calculatedHostelRent, setCalculatedHostelRent] = useState(0);
     const [showPopup, setShowPopup] = useState(false);
-    const togglePopup = () => {
-        setShowPopup(!showPopup);
-    };
     const { user } = useContext(Store);
     // eslint-disable-next-line no-unused-vars
     const [cookies] = useCookies(["userToken"]);
     const checking = () => {
         toast.error("Please Login for Booking");
         navigate("/login");
-    };
-    const calculateFare = async () => {
-        const price = location.state.serviceRecord.servicePrice;
-        setCalculatedHostelRent(price);
     };
     const checkOutBtn = async () => {
         const serviceName = location.state.serviceRecord.serviceName

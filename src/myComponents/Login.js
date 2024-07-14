@@ -11,6 +11,7 @@ export default function Login() {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const { setUser } = useContext(Store);
+  // eslint-disable-next-line no-unused-vars
   const [cookies, setCookies] = useCookies(["userToken"]);
   const [loading, setLoading] = useState(false);
   const handleEmailChange = (e) => {

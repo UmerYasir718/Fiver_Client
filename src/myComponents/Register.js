@@ -7,7 +7,6 @@ export default function Register() {
   const navigate = useNavigate();
   const [passShow, setPassShow] = useState(false);
   const [userName, setUserName] = useState("");
-  const [userCNIC, setUserCNIC] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [userConfirmPassword, setUserConfirmPassword] = useState("");
@@ -17,9 +16,6 @@ export default function Register() {
   };
   const handleEmail = async (e) => {
     setUserEmail(e.target.value);
-  };
-  const handleCNIC = async (e) => {
-    setUserCNIC(e.target.value);
   };
   const handlePassword = async (e) => {
     setUserPassword(e.target.value);

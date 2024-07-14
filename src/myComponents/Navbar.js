@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Avatar from "@mui/material/Avatar";
 import React, { useContext, useEffect } from "react";
 import { useCookies } from "react-cookie";
