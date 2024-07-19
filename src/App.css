@@ -533,6 +533,7 @@ section .form_data {
 
 .CardImg {
   border-bottom: 2px solid black;
+  height: 50vh;
 }
 
 .CardText {
@@ -555,17 +556,8 @@ section .form_data {
 }
 
 .backToHome {
-  text-decoration: none;
-  color: white;
-  background-color: green;
-  border: 2px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;
-  padding: 5px;
-}
-
-.backToHome:hover {
-  color: white;
 }

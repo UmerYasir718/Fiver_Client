@@ -26,10 +26,10 @@ export default function LowerFooter() {
             <h4>Products</h4>
             <ul>
               <li>
-                <Link to=''>Flights</Link>
+                <Link to=''>Service</Link>
               </li>
               <li>
-                <Link to=''>Visas</Link>
+                <Link to=''>Secure</Link>
               </li>
               <li>
                 <Link to=''>Rewards</Link>
